@@ -38,6 +38,14 @@ public class Stack<T> {
         stackList.add(value);
     }
 
+    public T pop() {
+        if (isEmpty()) {
+            return null;
+        } else {
+            return stackList.remove(stackList.size() - 1);
+        }
+    }
+
     public static void main(String[] args) {
         // Create a stack of Integer type
         Stack<Integer> integerStack = new Stack<>();
@@ -59,6 +67,16 @@ public class Stack<T> {
 
         // Check the size of the stack
         System.out.println("Stack size: " + integerStack.size()); // Should print 3
+
+        // Pop an element from the stack
+        System.out.println("Popped element: " + integerStack.pop()); // Should print 15
+
+        // Print stack elements after pop
+        System.out.println("Stack elements after pop:");
+        integerStack.printStack(); // Should print 10, 5 (top to bottom)
+
+        // Check the size of the stack
+        System.out.println("Stack size: " + integerStack.size()); // Should print 2
 
         // Test if stack is empty
         System.out.println("Is stack empty? " + integerStack.isEmpty()); // false
